@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    height: 90vh;
+    background-image: linear-gradient(rgba(40, 44, 55, 0.92), rgba(40, 44, 55, 0.92)), url(img/team-418_640.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100px;
+    padding: 10px 15px 0 15px;
+    background-color: transparent;
+    text-transform: uppercase;
+}
+
+.navigation-container {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navigation a {
+    display: inline-block;
+    color: rgb(77, 84, 103);
+    text-decoration: none;
+}
+
+.navigation .changeColor {
+    color: white;
+}
+
+i.fas {
+    font-size: 35px;
+    color: white;
+}
+
+.navigation-burger .fa-bars {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+}
+
+.header {
+    display: flex;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.header h2 {
+    margin-top: 10vh;
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 50px;
+}
+
+.header p {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+/*
+.navigation ul {
+    list-style: none;
+}
+*/
+
+.btn {
+    align-self: center;
+    padding: 15px 40px;
+    font-size: 13px;
+    font-weight: 300;
+    background-color: #FF5274;
+    color: white;
+    text-transform: uppercase;
+    border: solid 2px #FF5274;
+    border-radius: 40px;
+}
+
+.btn-header {
+    width: 80%;
+}
+
+.btn-header:hover {
+    background-color: transparent;
+    color: #FF5274;
+}
