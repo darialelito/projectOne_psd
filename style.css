@@ -10,66 +10,100 @@ body {
 
 header {
     height: 90vh;
+    min-height: 750px;
     background-image: linear-gradient(rgba(40, 44, 55, 0.92), rgba(40, 44, 55, 0.92)), url(img/team-418_640.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     color: white;
-
 }
 
+ul {
+    list-style: none
+}
+
+/*START nav*/
 .navigation {
     position: fixed;
     top: 0;
     left: 0;
-    width: 90%;
+    right: 0;
     height: 100px;
     padding: 10px 15px 0 15px;
     background-color: transparent;
-    text-transform: uppercase;
 }
 
 .navigation-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+    height: 100px;
+    padding-right: 10px;
+    padding-left: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.navigation a {
+.navigation .navigation-container > a {
     display: inline-block;
     color: rgb(77, 84, 103);
     text-decoration: none;
+    font-size: 25px;
+    text-transform: uppercase;
 }
 
 .navigation .changeColor {
     color: white;
 }
 
-i.fas {
+.navigation-burger {
     font-size: 35px;
     color: white;
+    cursor: pointer;
+    z-index: 1;
 }
 
-.navigation-burger .fa-bars {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-
+.navigation-burger i.show {
+    display: none;
 }
 
+.navigation .navigation-container .navigation-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: 0.2s ease-out;
+}
+
+.navigation-content a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.navigation .navigation-container .navigation-content.show {
+    top: -90vh;
+}
+
+
+/*START header*/
 .header {
     display: flex;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 130px 15px 0 15px;
     height: 100%;
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
 }
 
-.header h2 {
-    margin-top: 10vh;
-    margin-bottom: 40px;
+.header h1 {
     font-weight: 500;
     font-size: 50px;
 }
@@ -79,13 +113,8 @@ i.fas {
     font-size: 20px;
 }
 
-/*
-.navigation ul {
-    list-style: none;
-}
-*/
-
 .btn {
+    width: 80%;
     align-self: center;
     padding: 15px 40px;
     font-size: 13px;
@@ -97,11 +126,21 @@ i.fas {
     border-radius: 40px;
 }
 
-.btn-header {
-    width: 80%;
+.btn-container {
+    display: flex;
+    flex-direction: column;
 }
 
-.btn-header:hover {
+.btn-container .btn-first {
+    margin-bottom: 20px;
+}
+
+
+.btn:hover {
     background-color: transparent;
     color: #FF5274;
+}
+
+section {
+    height: 50vh;
 }
