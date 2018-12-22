@@ -8,16 +8,6 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-header {
-    height: 90vh;
-    min-height: 750px;
-    background-image: linear-gradient(rgba(40, 44, 55, 0.92), rgba(40, 44, 55, 0.92)), url(img/team-418_640.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    color: white;
-}
-
 ul {
     list-style: none
 }
@@ -69,12 +59,12 @@ ul {
     display: none;
 }
 
-.navigation .navigation-container .navigation-content {
+.navigation-content {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 70vh;
+    height: 77vh;
     background-color: #282c37;
     transition: 0.2s ease-out;
     padding: 70px;
@@ -90,8 +80,8 @@ ul {
     padding: 10px 0;
 }
 
-.navigation .navigation-container .navigation-content.show {
-    top: -90vh;
+.navigation-content.show {
+    top: -120vh;
 }
 
 .navigation.scroll {
@@ -102,8 +92,63 @@ ul {
     border: none;
 }
 
+@media (min-width: 640px) {
+    .navigation-content {
+        height: 90vh;
+        padding: 10px;
+    }
+
+    .navigation-content a {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 800px) {
+    .navigation-burger {
+        display: none;
+    }
+
+    .navigation-content {
+        position: static;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .navigation-content li {
+        display: inline-block;
+    }
+
+    .navigation-content a {
+        padding: 0 7px 0 2px;
+        font-size: 18px;
+        text-transform: uppercase;
+        color: white;
+    }
+
+    .navigation-content a:hover {
+        color: #FF5274;
+    }
+
+    .navigation-content.show {
+        top: 0;
+    }
+}
+
 /*START header*/
 .header {
+    height: 90vh;
+    min-height: 750px;
+    background-image: linear-gradient(rgba(40, 44, 55, 0.92), rgba(40, 44, 55, 0.92)), url(img/team-418_640.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+.header__wrap {
     display: flex;
     padding: 130px 15px 0 15px;
     height: 100%;
@@ -112,20 +157,24 @@ ul {
     text-align: center;
 }
 
-.header h1 {
+.header__wrap h1 {
     font-weight: 500;
     font-size: 50px;
 }
 
-.header p {
+.header__wrap p {
     font-weight: 300;
     font-size: 20px;
 }
 
+.btn-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .btn {
-    width: 80%;
     align-self: center;
-    padding: 15px 40px;
+    padding: 15px 92px;
     font-size: 13px;
     font-weight: 300;
     background-color: #FF5274;
@@ -135,27 +184,51 @@ ul {
     border-radius: 40px;
 }
 
-.btn-container {
-    display: flex;
-    flex-direction: column;
-}
-
 .btn-container .btn-first {
     margin-bottom: 20px;
 }
-
 
 .btn:hover {
     background-color: transparent;
     color: #FF5274;
 }
 
-/*START section.description*/
-/*
-.description {
-    height: 50vh;
+@media (min-width: 640px) {
+    .header__wrap {
+        margin: 0 auto;
+        width: 80%;
+        height: 83%;
+    }
 }
-*/
+
+@media (min-width: 800px) {
+    .header__wrap {
+        width: 70%;
+        height: 80%;
+    }
+
+    .header__wrap p {
+        font-size: 26px;
+    }
+
+    .btn-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 15px 50px;
+    }
+
+    .btn-container .btn-first {
+        margin-bottom: 0;
+        margin-right: 20px;
+        padding-right: 54px;
+        padding-left: 54px;
+    }
+}
+
+/*START section.description*/
 
 .description {
     display: flex;
