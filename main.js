@@ -2,6 +2,7 @@ const clickNavBurger = document.querySelector('.navigation-burger');
 const iconBurger = document.querySelector('i.fa-bars');
 const iconX = document.querySelector('i.fa-times');
 const navContent = document.querySelector('.navigation-content');
+const navHeight = document.querySelector('.navigation');
 
 
 window.addEventListener('scroll', function () {
@@ -13,7 +14,7 @@ window.addEventListener('scroll', function () {
 
 
     // section features --> features.png move during scroll
-    if (document.documentElement.scrollTop > document.querySelector('.features').offsetTop) {
+    if (document.documentElement.scrollTop > document.querySelector('.features').offsetTop - navHeight.clientHeight / 2) {
         document.querySelector('.features__png').classList.add('active');
     }
     if (document.documentElement.scrollTop < document.querySelector('.features').offsetTop) {

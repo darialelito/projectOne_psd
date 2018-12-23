@@ -383,7 +383,7 @@ i.fontAwesome {
 /*START section.download*/
 .download {
     position: relative;
-    padding: 50px 15px 160px;
+    padding: 50px 15px 150px;
     background-color: rgb(54, 60, 72);
     background-position: center;
     background-repeat: no-repeat;
@@ -392,7 +392,7 @@ i.fontAwesome {
 }
 
 .download__h2 {
-    padding: 25px 5px;
+    padding: 28px 5px;
     font-size: 28px;
     font-weight: 500;
     color: white;
@@ -403,6 +403,79 @@ i.fontAwesome {
     line-height: 1.5;
     color: grey;
     padding-bottom: 40px;
+}
+
+.perspective__wrap {
+    margin: 50px auto;
+    width: 100px;
+    height: 100px;
+    perspective: 300px;
+    position: absolute;
+    left: calc(50% - 300px/2);
+    top: 100%;
+    transform: translate(100%, -100%);
+}
+
+.perspective__parent {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateSquare 6s linear infinite;
+}
+
+.perspective__child {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255, 82, 116, 0.8), rgba(61, 67, 81, 0.8));
+    box-shadow: 0 0 4px #3d4351;
+    border-radius: 5px;
+}
+
+.perspective__i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    font-size: 46px;
+    color: #3d4351;
+}
+
+/*obrót w lewo o 90 i 50px w perspektywie na osi z*/
+.perspective__child.left {
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+/*obrót w prawo o 90 i 50px w perspektywie na osi z*/
+.perspective__child.right {
+    transform: rotateY(90deg) translateZ(50px);
+}
+
+.perspective__child.top {
+    transform: rotateX(-90deg) translateZ(50px);
+}
+
+.perspective__child.bottom {
+    transform: rotateX(90deg) translateZ(50px);
+}
+
+.perspective__child.front {
+    transform: translateZ(50px);
+}
+
+.perspective__child.back {
+    transform: translateZ(-50px);
+}
+
+@keyframes rotateSquare {
+    0% {
+        transform: rotateX(0) rotateZ(0);
+    }
+
+    100% {
+        transform: rotateX(360deg) rotateZ(360deg);
+    }
 }
 
 
