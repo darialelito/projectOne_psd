@@ -10,6 +10,15 @@ window.addEventListener('scroll', function () {
     } else {
         document.querySelector('.navigation').classList.remove('scroll');
     }
+
+
+    // section features --> features.png move during scroll
+    if (document.documentElement.scrollTop > document.querySelector('.features').offsetTop) {
+        document.querySelector('.features__png').classList.add('active');
+    }
+    if (document.documentElement.scrollTop < document.querySelector('.features').offsetTop) {
+        document.querySelector('.features__png').classList.remove('active');
+    }
 })
 
 clickNavBurger.addEventListener('click', function () {

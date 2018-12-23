@@ -32,6 +32,18 @@ i.fontAwesome {
     line-height: 2;
 }
 
+.btn {
+    align-self: center;
+    padding: 15px 92px;
+    font-size: 13px;
+    font-weight: 300;
+    background-color: #FF5274;
+    color: white;
+    text-transform: uppercase;
+    border: solid 2px #FF5274;
+    border-radius: 40px;
+}
+
 @media (min-width: 460px) {
 
     .fontAwesome {
@@ -48,6 +60,7 @@ i.fontAwesome {
     height: 100px;
     padding: 0 15px 0 15px;
     background-color: transparent;
+    z-index: 100;
 }
 
 .navigation-container {
@@ -198,18 +211,6 @@ i.fontAwesome {
     flex-direction: column;
 }
 
-.btn {
-    align-self: center;
-    padding: 15px 92px;
-    font-size: 13px;
-    font-weight: 300;
-    background-color: #FF5274;
-    color: white;
-    text-transform: uppercase;
-    border: solid 2px #FF5274;
-    border-radius: 40px;
-}
-
 .btn-container .btn-first {
     margin-bottom: 20px;
 }
@@ -283,6 +284,7 @@ i.fontAwesome {
     .description {
         display: flex;
         flex-direction: row;
+        min-height: 400px;
     }
 }
 
@@ -340,12 +342,22 @@ i.fontAwesome {
         overflow: hidden;
     }
 
+    .features__h2 {
+        font-size: 28px;
+    }
+
     .features__wrap:nth-last-child(1) {
         border: none;
     }
 
     .features__png {
         display: block;
+        transform: translateX(-100vw);
+        transition: 2s;
+    }
+
+    .features__png.active {
+        transform: translateX(-52vw);
     }
 
     .png {
@@ -370,5 +382,32 @@ i.fontAwesome {
 
 /*START section.download*/
 .download {
-    height: 70vh;
+    position: relative;
+    padding: 50px 15px 160px;
+    background-color: rgb(54, 60, 72);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.download__h2 {
+    padding: 25px 5px;
+    font-size: 28px;
+    font-weight: 500;
+    color: white;
+}
+
+.download__p {
+    font-weight: 300;
+    line-height: 1.5;
+    color: grey;
+    padding-bottom: 40px;
+}
+
+
+
+/*START section.portfolio*/
+.portfolio {
+    height: 200vh;
 }
