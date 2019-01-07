@@ -478,9 +478,177 @@ i.fontAwesome {
     }
 }
 
+/*START section.descriptionTwo*/
+.descriptionTwo {
+    background-color: #f3f4f8;
+    padding: 0 15px 60px;
+}
 
+.descriptionTwo__h2 {
+    padding: 120px 5px 60px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 500;
+    color: #3D4351;
+}
+
+.descriptionTwo__wrap {
+    padding-bottom: 42px;
+}
+
+@media (min-width: 640px) {
+    .descriptionTwo {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .descriptionTwo {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .description__wrapper {
+        display: flex;
+        justify-content: center;
+        padding: 0 20px;
+    }
+
+    .descriptionTwo__wrap:nth-of-type(1) {
+        padding-right: 80px;
+    }
+
+    .descriptionTwo__wrap:nth-of-type(2) {
+        padding-left: 80px;
+    }
+}
 
 /*START section.portfolio*/
 .portfolio {
+    padding: 0 15px;
+    background-color: #f3f4f8;
+    text-align: center;
+}
+
+.portfolio__photo {
+    height: 30vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.portfolio__photo.one {
+    background-image: url(img/autumn-3846345_640.jpg);
+}
+
+.portfolio__photo.two {
+    background-image: url(img/flower-3876195_640.jpg);
+}
+
+.portfolio__photo.three {
+    background-image: url(img/frozen-3840163_640.jpg);
+}
+
+.portoflio__h4 {
+    padding: 30px 0 15px;
+    text-transform: uppercase;
+    color: #FF5274;
+}
+
+.portoflio__p {
+    padding-bottom: 20px;
+    color: #3D4351;
+}
+
+@media (min-width: 640px) {
+    .portfolio__photo {
+        height: 100vh;
+    }
+}
+
+@media (min-width: 1024px) {
+    .portfolio {
+        padding-top: 50px;
+        padding-bottom: 100px;
+    }
+
+    .portoflio__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .portoflio__wrapper_inside {
+        flex-grow: 1;
+    }
+
+    .portfolio__photo {
+        height: 350px;
+        transition: 0.4s;
+        background-color: rgb(40, 44, 55);
+    }
+
+    .portfolio__photo:hover {
+        filter: grayscale(100%);
+    }
+}
+
+/*START section.team*/
+.team {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-image: linear-gradient(rgba(40, 44, 55, 0.7), rgba(40, 44, 55, 0.92)), url(img/laptop-1209008_1280.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.team__wrapper {
+    text-align: center;
+}
+
+.fa-circle {
+    padding-bottom: 15px;
+    color: white;
+    font-size: 45px;
+}
+
+.team__p {
+    padding-bottom: 15px;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.team__author {
+    color: #FF5274;
+    text-transform: uppercase;
+    padding-bottom: 55px;
+}
+
+.fa-circle.small {
+    font-size: 15px;
+    color: grey;
+}
+
+.fa-circle.personOne:nth-child(1) {
+    color: white;
+}
+
+.team__wrapper.personTwo {
+    display: none;
+}
+
+.team__wrapper.personThree {
+    display: none;
+}
+
+/*START section.contact*/
+.contact {
     height: 200vh;
 }
