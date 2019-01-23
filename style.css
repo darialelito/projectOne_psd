@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -42,6 +46,7 @@ i.fontAwesome {
     text-transform: uppercase;
     border: solid 2px #FF5274;
     border-radius: 40px;
+    cursor: pointer;
 }
 
 @media (min-width: 460px) {
@@ -596,19 +601,23 @@ i.fontAwesome {
 
 /*START section.team*/
 .team {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     height: 90vh;
     background-image: linear-gradient(rgba(40, 44, 55, 0.7), rgba(40, 44, 55, 0.92)), url(img/laptop-1209008_1280.jpg);
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 .team__wrapper {
     text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translate(0, -50%);
+    animation: slider 15s linear infinite both;
 }
 
 .fa-circle {
@@ -631,24 +640,198 @@ i.fontAwesome {
     padding-bottom: 55px;
 }
 
+.team__wrapper_i {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .fa-circle.small {
     font-size: 15px;
     color: grey;
 }
 
-.fa-circle.personOne:nth-child(1) {
-    color: white;
+.fa-circle.personOne {
+    animation: dotsColor 15s linear infinite;
+}
+
+.fa-circle.personTwo {
+    animation: dotsColor 15s linear infinite;
+    animation-delay: 5s;
+}
+
+.fa-circle.personThree {
+    animation: dotsColor 15s linear infinite;
+    animation-delay: 10s;
 }
 
 .team__wrapper.personTwo {
-    display: none;
+    animation-delay: 5s;
 }
 
 .team__wrapper.personThree {
-    display: none;
+    animation-delay: 10s;
+}
+
+@keyframes slider {
+    0% {
+        transform: translate(100%, -50%);
+    }
+
+    3% {
+        transform: translate(100%, -50%);
+    }
+
+    6% {
+        transform: translate(0, -50%);
+    }
+
+    30% {
+        transform: translate(0, -50%);
+    }
+
+    33% {
+        transform: translate(-100%, -50%);
+    }
+
+    100% {
+        transform: translate(-100%, -50%);
+    }
+}
+
+@keyframes dotsColor {
+    0% {
+        color: white;
+    }
+
+    30% {
+        color: white;
+    }
+
+    33% {
+        color: grey;
+    }
+
+    100% {
+        color: grey;
+    }
+}
+
+@media (min-width: 700px) {
+    .team__p {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .fa-circle {
+        padding-bottom: 28px;
+        font-size: 60px;
+    }
+
+    .team__p {
+        padding-bottom: 28px;
+        font-size: 45px;
+    }
+
+    .team__author {
+        font-size: 27px;
+    }
 }
 
 /*START section.contact*/
 .contact {
-    height: 200vh;
+    padding: 60px 15px;
+}
+
+.contact__h2 {
+    padding: 40px 5px 25px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 500;
+    color: #3D4351;
+}
+
+.contact__p {
+    padding-bottom: 30px;
+    text-align: center;
+    color: grey;
+}
+
+.contact__form_envelope,
+.contact__form_comment {
+    position: relative;
+    width: 90%;
+    height: 55px;
+    margin: 0 auto 10px;
+    border: 1px solid #E6E9EA;
+    border-radius: 6px;
+    align-self: center;
+    font-size: 13px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.contact__input,
+.contact__textarea {
+    width: 100%;
+    height: 100%;
+    padding-left: 70px;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    line-height: 55px;
+}
+
+.fa-envelope,
+.fa-comment-alt {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    color: #FF5274;
+}
+
+.fa-envelope::after,
+.fa-comment-alt::after {
+    content: "";
+    border-right: 1px solid #E6E9EA;
+    padding-right: 20px;
+}
+
+.contact__btn {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #FF5274;
+    border-radius: 6px;
+}
+
+@media (min-width: 641px) {
+    .contact__content {
+        width: 88%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact__content {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+/*START footer*/
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 15px;
+    background-color: rgb(54, 60, 72);
+}
+
+.fa-angle-up {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
 }

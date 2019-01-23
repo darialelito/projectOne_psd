@@ -3,6 +3,8 @@ const iconBurger = document.querySelector('i.fa-bars');
 const iconX = document.querySelector('i.fa-times');
 const navContent = document.querySelector('.navigation-content');
 const navHeight = document.querySelector('.navigation');
+const angleGoUp = document.querySelector('.footer__i');
+
 
 
 window.addEventListener('scroll', function () {
@@ -26,4 +28,8 @@ clickNavBurger.addEventListener('click', function () {
     iconBurger.classList.toggle('show');
     iconX.classList.toggle('show');
     navContent.classList.toggle('show');
+})
+
+angleGoUp.addEventListener('click', function () {
+    window.scrollTo(0, 0);
 })
